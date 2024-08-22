@@ -1,4 +1,7 @@
 #include "Descricao.h"
+#include <string>
+#include "ProdutoEletronico.h"
+using namespace std ;
 
 Descricao::Descricao()
 {
@@ -34,8 +37,21 @@ void Descricao::setdatadelancamento(string data_de_lancamento){
   this->data_de_lancamento = data_de_lancamento;
 }
 void Descricao::setfabricante(string fabricante){
-   this->fabrincante = fabricante;
+   this->fabricante = fabricante;
 }
-void Descricao::setpotencia(){
+void Descricao::setpotencia(float potencia){
  this->potencia=potencia;
 }
+
+void Descricao::leratributos() {
+    cout << "Digite o peso: ";
+    cin >> this->peso;
+    cin.ignore();
+    cout << "Digite a data de lancamento: ";
+    getline(cin, this->data_de_lancamento);
+    cout << "Digite o fabricante: ";
+    getline(cin, this->fabricante);
+    cout << "Digite a potencia: ";
+    cin >> this->potencia;
+
+    }

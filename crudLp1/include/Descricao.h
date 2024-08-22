@@ -1,11 +1,10 @@
 #ifndef DESCRICAO_H
 #define DESCRICAO_H
 #include <bits/stdc++.h>
-
+#include "ItemIventario.h"
 using namespace std;
 
-class Descricao
-{
+class Descricao : public ItemIventario{
     public:
         Descricao();
         Descricao(float peso, string data_de_lancamento, string fabricante,float potencia);
@@ -20,6 +19,7 @@ class Descricao
         void setdatadelancamento(string data_de_lancamento);
         void setfabricante(string fabricante);
 
+        void leratributos() override ;
 
 
     private:

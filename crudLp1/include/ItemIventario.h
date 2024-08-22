@@ -19,6 +19,7 @@ class ItemIventario{
         void setNome(string nome);
         void setPreco(float preco);
         void setQtdEstoque(int qtd_estoque);
+        virtual void leratributos();
 };
 
 #endif // ITEMIVENTARIO_H

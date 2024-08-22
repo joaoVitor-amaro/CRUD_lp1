@@ -15,3 +15,34 @@
 1724336642 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtoeletronico.h
 	<string>
 
+1724349811 source:c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\main.cpp
+	<iostream>
+	"ItemIventario.h"
+	"Descricao.h"
+	"ProdutoEletronico.h"
+
+1724348072 c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\include\itemiventario.h
+	<string>
+
+1724348611 source:c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\src\itemiventario.cpp
+	"ItemIventario.h"
+	<string>
+	<iostream>
+
+1724349205 source:c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\src\produtoeletronico.cpp
+	"ProdutoEletronico.h"
+	<iostream>
+
+1724348071 c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\include\produtoeletronico.h
+	<string>
+	"ItemIventario.h"
+
+1724349569 source:c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\src\descricao.cpp
+	"Descricao.h"
+	<string>
+	"ProdutoEletronico.h"
+
+1724348071 c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\include\descricao.h
+	<bits/stdc++.h>
+	"ItemIventario.h"
+

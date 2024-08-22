@@ -1,5 +1,5 @@
 #include "ProdutoEletronico.h"
-
+#include <iostream>
 ProdutoEletronico::ProdutoEletronico(){}
 
 ProdutoEletronico::ProdutoEletronico(int marca, int categoria) {
@@ -26,12 +26,16 @@ void ProdutoEletronico::setCategoria(int categoria) {
     switch (categoria) {
         case 1:
             this->categoria = "Smartphone";
+            break;
         case 2:
             this->categoria = "Notebook";
+            break;
         case 3:
             this->categoria = "Tablet";
+            break;
         case 4:
             this->categoria = "Fone";
+            break;
     }
 }
 
@@ -41,4 +45,11 @@ string ProdutoEletronico::getMarca() {
 
 string ProdutoEletronico::getCategoria() {
     return this->categoria;
+}
+void  ProdutoEletronico::leratributos(){
+    int marca , categoria ;
+    ItemIventario::leratributos();
+    cin >> marca >> categoria ;
+    this->setCategoria(categoria);
+    this->setMarca(marca);
 }
