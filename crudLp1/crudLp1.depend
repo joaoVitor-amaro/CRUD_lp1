@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1724337302 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\main.cpp
+	<iostream>
+	"ItemIventario.h"
+
+1724337135 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\itemiventario.cpp
+	"ItemIventario.h"
+
+1724336953 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
+	<string>
+
+1724336517 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
+	"ProdutoEletronico.h"
+
+1724336642 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtoeletronico.h
+	<string>
+

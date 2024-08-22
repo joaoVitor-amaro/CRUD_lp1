@@ -1,9 +1,8 @@
 #include <iostream>
+#include "ItemIventario.h"
 
 using namespace std;
 
-int main()
-{
-    cout << "Hello world!" << endl;
+int main(){
     return 0;
 }
