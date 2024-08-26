@@ -6,20 +6,21 @@ using namespace std;
 
 class ItemIventario{
     protected:
-        int id = 0;
+        int id;
         string nome;
         float preco;
         int qtd_estoque;
     public:
         ItemIventario();
-        ItemIventario(std::string nome, float preco, int qtd_estoque);
+        ItemIventario(int id, int nome, float preco, int qtd_estoque);
         string getNome();
         float getPreco();
         int getQtdEstoque();
-        void setNome(string nome);
+        void setNome(int nome);
         void setPreco(float preco);
         void setQtdEstoque(int qtd_estoque);
-        virtual void leratributos();
+        void menuProduto();
+        virtual void exibirDados();
 };
 
 #endif // ITEMIVENTARIO_H

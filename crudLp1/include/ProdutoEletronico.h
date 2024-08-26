@@ -5,19 +5,15 @@
 using namespace std;
 
 class ProdutoEletronico : public ItemIventario{
-    private:
+    protected:
         string marca;
-        string categoria;
     public:
         ProdutoEletronico();
-        ProdutoEletronico(int marca, int categoria);
+        ProdutoEletronico(int id, int nome, float preco, int qt_estoque, int marca);
         void setMarca(int marca);
-        void setCategoria(int categoria);
         string getMarca();
-        string getCategoria();
-
-
-        void leratributos() override ;
+        void menuMarca();
+        void exibirDados() override;
 };
 
 #endif // PRODUTOELETRONICO_H

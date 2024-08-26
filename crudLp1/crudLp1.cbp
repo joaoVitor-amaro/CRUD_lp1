@@ -36,10 +36,14 @@
 		</Compiler>
 		<Unit filename="include/Descricao.h" />
 		<Unit filename="include/ItemIventario.h" />
+		<Unit filename="include/Produto.h" />
+		<Unit filename="include/ProdutoCompleto.h" />
 		<Unit filename="include/ProdutoEletronico.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Descricao.cpp" />
 		<Unit filename="src/ItemIventario.cpp" />
+		<Unit filename="src/Produto.cpp" />
+		<Unit filename="src/ProdutoCompleto.cpp" />
 		<Unit filename="src/ProdutoEletronico.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

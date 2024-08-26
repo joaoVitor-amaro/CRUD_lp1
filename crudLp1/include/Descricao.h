@@ -2,12 +2,13 @@
 #define DESCRICAO_H
 #include <bits/stdc++.h>
 #include "ItemIventario.h"
+#include "ProdutoEletronico.h"
 using namespace std;
 
 class Descricao : public ItemIventario{
     public:
         Descricao();
-        Descricao(float peso, string data_de_lancamento, string fabricante,float potencia);
+        Descricao(float peso, string data_de_lancamento, string fabricante, float potencia);
 
         float getpeso();
         string getdatadelancamento();
@@ -19,10 +20,10 @@ class Descricao : public ItemIventario{
         void setdatadelancamento(string data_de_lancamento);
         void setfabricante(string fabricante);
 
-        void leratributos() override ;
+        void exibirDados();
 
 
-    private:
+    protected:
         float potencia;
         float peso;
         string data_de_lancamento;

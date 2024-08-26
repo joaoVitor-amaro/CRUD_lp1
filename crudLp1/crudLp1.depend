@@ -1,19 +1,26 @@
 # depslib dependency file v1.0
-1724337302 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\main.cpp
+1724685350 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\main.cpp
+	<iostream>
+	<vector>
+	"Descricao.h"
+	"Produto.h"
+
+1724689207 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\itemiventario.cpp
+	"ItemIventario.h"
+	<string>
+	<iostream>
+
+1724689198 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
+	<string>
+
+1724688863 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
+	"ProdutoEletronico.h"
 	<iostream>
 	"ItemIventario.h"
 
-1724337135 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\itemiventario.cpp
+1724689630 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtoeletronico.h
+	<string>
 	"ItemIventario.h"
-
-1724336953 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
-	<string>
-
-1724336517 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
-	"ProdutoEletronico.h"
-
-1724336642 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtoeletronico.h
-	<string>
 
 1724349811 source:c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\main.cpp
 	<iostream>
@@ -45,4 +52,37 @@
 1724348071 c:\users\vladi\onedrive\documentos\crud_lp1\crudlp1\include\descricao.h
 	<bits/stdc++.h>
 	"ItemIventario.h"
+
+1724689872 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\descricao.h
+	<bits/stdc++.h>
+	"ItemIventario.h"
+	"ProdutoEletronico.h"
+
+1724689872 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\descricao.cpp
+	"Descricao.h"
+	<string>
+	"ProdutoEletronico.h"
+
+1724690051 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+	"Produto.h"
+	<iostream>
+	<string>
+	"ProdutoEletronico.h"
+	"Descricao.h"
+	"ItemIventario.h"
+	<vector>
+
+1724689269 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
+	<vector>
+	"ItemIventario.h"
+	"Descricao.h"
+	"ProdutoCompleto.h"
+
+1724689809 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
+	"ProdutoCompleto.h"
+
+1724689947 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
+	"ProdutoEletronico.h"
+	"Descricao.h"
+	<string>
 
