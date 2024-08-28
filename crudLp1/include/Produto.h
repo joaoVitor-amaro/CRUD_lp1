@@ -12,8 +12,15 @@ class Produto{
         Produto();
         void menu();
         void menuOpcao();
+        //void opcaoAtualizar();
+        int buscarIdProduto(int idProduto);
+        void menuPesquisar();
+        void dadosProdutospesqu(int i);
         void adcionarProduto();
         void listarProduto();
+        void pesquisarProduto();
+        //void atualizarProduto();
+        void deletarProduto();
 };
 
 #endif // PRODUTO_H

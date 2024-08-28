@@ -11,6 +11,10 @@ ItemIventario::ItemIventario(int id, int nome, float preco, int qtd_estoque){
     this->qtd_estoque = qtd_estoque;
 }
 
+int ItemIventario::getId() {
+    return this->id;
+}
+
 string ItemIventario::getNome() {
     return this->nome;
 }
@@ -60,8 +64,8 @@ void ItemIventario::menuProduto() {
 
 
  void ItemIventario::exibirDados() {
-    cout << "ID: " << id << endl;
-    cout << "Nome: " << nome << endl;
-    cout << "Preco: " << preco << endl;
-    cout << "Quantidade em Estoque: " << qtd_estoque << endl;
+    cout << this->id << " - ";
+    cout << this->nome << " - ";
+    cout << "R$" <<this->preco << " - ";
+    cout << this->qtd_estoque << " - ";
  }

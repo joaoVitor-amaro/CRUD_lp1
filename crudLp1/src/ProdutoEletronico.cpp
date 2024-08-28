@@ -50,5 +50,5 @@ void ProdutoEletronico::menuMarca() {
 
 void ProdutoEletronico::exibirDados() {
     ItemIventario::exibirDados();
-    cout << "Marca: " << this->marca << " - ";
+    cout << this->marca << " - ";
 }

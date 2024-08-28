@@ -11,3 +11,11 @@ void ProdutoCompleto::exibirDados() {
     this->prodr.exibirDados();
     this->descricao.exibirDados();
 }
+
+int ProdutoCompleto::getIdProduto() {
+    return this->prodr.getId();
+}
+
+void ProdutoCompleto::getIdNome() {
+    cout << this->prodr.getId() << " - " << this->prodr.getNome() << endl;
+}

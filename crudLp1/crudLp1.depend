@@ -5,15 +5,15 @@
 	"Descricao.h"
 	"Produto.h"
 
-1724689207 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\itemiventario.cpp
+1724694026 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\itemiventario.cpp
 	"ItemIventario.h"
 	<string>
 	<iostream>
 
-1724689198 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
+1724693981 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
 	<string>
 
-1724688863 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
+1724692411 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
 	"ProdutoEletronico.h"
 	<iostream>
 	"ItemIventario.h"
@@ -58,30 +58,31 @@
 	"ItemIventario.h"
 	"ProdutoEletronico.h"
 
-1724689872 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\descricao.cpp
+1724693476 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\descricao.cpp
 	"Descricao.h"
 	<string>
 	"ProdutoEletronico.h"
 
-1724690051 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+1724853182 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
 	"Produto.h"
 	<iostream>
 	<string>
 	"ProdutoEletronico.h"
 	"Descricao.h"
+	"ProdutoCompleto.h"
 	"ItemIventario.h"
 	<vector>
 
-1724689269 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
+1724854916 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
 	<vector>
 	"ItemIventario.h"
 	"Descricao.h"
 	"ProdutoCompleto.h"
 
-1724689809 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
+1724722173 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
 	"ProdutoCompleto.h"
 
-1724689947 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
+1724698372 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
 	"ProdutoEletronico.h"
 	"Descricao.h"
 	<string>

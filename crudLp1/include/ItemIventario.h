@@ -13,6 +13,7 @@ class ItemIventario{
     public:
         ItemIventario();
         ItemIventario(int id, int nome, float preco, int qtd_estoque);
+        int getId();
         string getNome();
         float getPreco();
         int getQtdEstoque();

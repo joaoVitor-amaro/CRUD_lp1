@@ -42,8 +42,8 @@ void Descricao::setpotencia(float potencia){
 }
 
 void Descricao::exibirDados() {
-    cout << "Peso: " << peso << endl;
-    cout << "Data de Lancamento: " << data_de_lancamento << endl;
-    cout << "Fabricante: " << fabricante << endl;
-    cout << "Potencia: " << potencia << endl;
+    cout << this->peso << " - ";
+    cout << this->data_de_lancamento << " - ";
+    cout << this->fabricante << " - ";
+    cout << this->potencia << "w";
 }

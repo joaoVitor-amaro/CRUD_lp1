@@ -3,7 +3,7 @@
 #include <string>
 #include "ProdutoEletronico.h"
 #include "Descricao.h"
-//#include "ProdutoCompleto.h"
+#include "ProdutoCompleto.h"
 #include "ItemIventario.h"
 #include <vector>
 
@@ -24,10 +24,60 @@ void Produto::menuOpcao() {
 }
 
 void Produto::listarProduto() {
-    for (auto item : inventario) {
-        item.exibirDados();
-        cout << endl;
+    if(this->inventario.empty()) {
+        cout << "Nenhum produto cadastrado" << endl;
+    } else {
+        cout << "ID - NOME - PRECO - ESTOQUE - MARCA - LANCAMENTO - FABRICANTE - POTENCIA" << endl;
+        cout << "---------------------------------------------------------------------" << endl;
+        for(int i = 0; i < this->inventario.size(); i++) {
+            this->inventario[i].exibirDados();
+            cout << endl;
+        }
+        cout << "---------------------------------------------------------------------" << endl;
     }
+}
+
+void Produto::pesquisarProduto() {
+    menuPesquisar();
+    int idProduto;
+    cout << "Id: ";
+    cin >> idProduto;
+    int i = buscarIdProduto(idProduto); //Busca o id do produto
+    dadosProdutospesqu(i); //Exibi os dados pesquisados do produto
+}
+
+void Produto::deletarProduto() {
+    menuPesquisar();
+    int idProdDeletar;
+    cout << "Deletar id: ";
+    cin >> idProdDeletar;
+    int i = buscarIdProduto(idProdDeletar);
+    this->inventario.erase(this->inventario.begin() + i);
+}
+
+int Produto::buscarIdProduto(int idProduto) {
+    int identificador = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getIdProduto() == idProduto) {
+            identificador = i;
+        }
+    }
+    return identificador;
+}
+
+void Produto::menuPesquisar() {
+    cout << "===== Produto =====" << endl;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        this->inventario[i].getIdNome();
+    }
+    cout << "-----------------------" << endl;
+}
+
+void Produto::dadosProdutospesqu(int i) {
+    cout << "---------------------------------------------------------------------" << endl;
+    this->inventario[i].exibirDados();
+    cout << endl;
+    cout << "---------------------------------------------------------------------" << endl;
 }
 
 void Produto::menu() {
@@ -37,22 +87,26 @@ void Produto::menu() {
         cout << "Opcao: ";
         cin >> opcao;
 
-        if(opcao == 0) {
+        if(opcao == 7) {
             return;
 
         } else if(opcao == 1) {
             int id, nome, qt_estoque, marca;
             float preco, potencia, peso;
             string fabricante, data_lacamento;
+            ItemIventario ive;
+            ProdutoEletronico prodr;
             cout << "ID: ";
             cin >> id;
+            ive.menuProduto();
             cout << "Nome: ";
             cin >> nome;
             cout << "Preco: ";
             cin >> preco;
             cout << "Quantidade em Estoque: ";
             cin >> qt_estoque;
-            cout << "Marcar: ";
+            prodr.menuMarca();
+            cout << "Marca: ";
             cin >> marca;
             cout << "Digite o peso: ";
             cin >> peso;
@@ -70,11 +124,23 @@ void Produto::menu() {
         } else if(opcao == 2) {
             listarProduto();
         } else if(opcao == 3) {
-            cout << "Pesquisar" << endl;
+            if(this->inventario.empty()) {
+                cout << "Nenhum produto cadastrado" << endl;
+            } else {
+                pesquisarProduto();
+            }
         } else if(opcao == 4) {
-            cout << "Atualizar" << endl;
+            if(this->inventario.empty()) {
+                cout << "Sem Produtos" << endl;
+            } else {
+                cout << "Atualizer" << endl;
+            }
         } else if(opcao == 5) {
-            cout << "Excluir" << endl;
+            if(this->inventario.empty()) {
+                cout << "Sem produtos" << endl;
+            } else {
+                deletarProduto();
+            }
         } else if(opcao == 6) {
             cout << "Exibir relatório" << endl;
         } else {

@@ -14,6 +14,8 @@ class ProdutoCompleto{
         ProdutoCompleto();
         ProdutoCompleto(ProdutoEletronico prodr, Descricao descricao);
         void exibirDados();
+        int getIdProduto();
+        void getIdNome();
 };
 
 #endif // PRODUTOCOMPLETO_H
