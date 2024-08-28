@@ -54,8 +54,7 @@ void Produto::opcaoAtualizar() {
     cout << "[4] - Marca" << endl;
     cout << "[5] - Peso" << endl;
     cout << "[6] - Ano lancamento" << endl;
-    cout << "[7] - Fabricante" << endl;
-    cout << "[8] - Potencia" << endl;
+    cout << "[7] - Potencia" << endl;
 }
 
 void Produto::menuAtualizarProduto() {
@@ -107,16 +106,12 @@ void Produto::atualizarProduto(int opcao, int pos) {
             this->inventario[pos].setPesoProduto(peso);
             break;
         case 6:
-            {string ano_lancamento;
-            getline(cin, ano_lancamento);
+            int ano_lancamento;
+            cout << "Ano de lacamento: ";
+            cin >> ano_lancamento;
             this->inventario[pos].setAno_lancamentoProduto(ano_lancamento);
-            break;}
+            break;
         case 7:
-            {string fabricante;
-            getline(cin, fabricante);
-            this->inventario[pos].setFabricanteProduto(fabricante);
-            break;}
-        case 8:
             float potencia;
             cout << "Potencia: ";
             cin >> potencia;
@@ -172,7 +167,7 @@ void Produto::menu() {
         } else if(opcao == 1) {
             int id, nome, qt_estoque, marca;
             float preco, potencia, peso;
-            string fabricante, data_lacamento;
+            int data_lacamento;
             ItemIventario ive;
             ProdutoEletronico prodr;
             cout << "ID: ";
@@ -191,13 +186,12 @@ void Produto::menu() {
             cin >> peso;
             cin.ignore();
             cout << "Digite a data de lancamento: ";
-            getline(cin, data_lacamento);
-            cout << "Digite o fabricante: ";
-            getline(cin, fabricante);
+            cin >> data_lacamento;
+            cin.ignore();
             cout << "Digite a potencia: ";
             cin >> potencia;
             ProdutoEletronico prod = ProdutoEletronico(id, nome, preco, qt_estoque, marca);
-            Descricao desc = Descricao(peso, data_lacamento, fabricante, potencia);
+            Descricao desc = Descricao(peso, data_lacamento, potencia);
             ProdutoCompleto prodCom = ProdutoCompleto(prod, desc);
             inventario.push_back(prodCom);
         } else if(opcao == 2) {

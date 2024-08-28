@@ -40,12 +40,8 @@ void ProdutoCompleto::setPesoProduto(float peso) {
     this->descricao.setpeso(peso);
 }
 
-void ProdutoCompleto::setAno_lancamentoProduto(string ano_lancamento) {
+void ProdutoCompleto::setAno_lancamentoProduto(int ano_lancamento) {
     this->descricao.setdatadelancamento(ano_lancamento);
-}
-
-void ProdutoCompleto::setFabricanteProduto(string fabricante) {
-    this->descricao.setfabricante(fabricante);
 }
 
 void ProdutoCompleto::setPotenciaProduto(float potencia) {

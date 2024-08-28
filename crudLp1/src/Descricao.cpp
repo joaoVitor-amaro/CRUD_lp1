@@ -6,7 +6,7 @@ using namespace std ;
 
 Descricao::Descricao(){}
 
-Descricao::Descricao(float peso, string data_de_lancamento, string fabricante, float potencia){
+Descricao::Descricao(float peso, int data_de_lancamento, float potencia){
     this->potencia = potencia;
     this->peso=peso;
     this->data_de_lancamento=data_de_lancamento;
@@ -17,11 +17,8 @@ Descricao::Descricao(float peso, string data_de_lancamento, string fabricante, f
 float Descricao::getpeso(){
    return this->peso;
 }
-string Descricao::getdatadelancamento(){
+int Descricao::getdatadelancamento(){
  return this->data_de_lancamento;
-}
-string Descricao::getfabricante(){
- return this->fabricante;
 }
 float Descricao::getpotencia(){
    return this->potencia;
@@ -31,11 +28,8 @@ float Descricao::getpotencia(){
 void Descricao::setpeso(float peso){
     this->peso = peso;
 }
-void Descricao::setdatadelancamento(string data_de_lancamento){
+void Descricao::setdatadelancamento(int data_de_lancamento){
   this->data_de_lancamento = data_de_lancamento;
-}
-void Descricao::setfabricante(string fabricante){
-   this->fabricante = fabricante;
 }
 void Descricao::setpotencia(float potencia){
  this->potencia=potencia;
@@ -44,6 +38,5 @@ void Descricao::setpotencia(float potencia){
 void Descricao::exibirDados() {
     cout << this->peso << " - ";
     cout << this->data_de_lancamento << " - ";
-    cout << this->fabricante << " - ";
     cout << this->potencia << "w";
 }

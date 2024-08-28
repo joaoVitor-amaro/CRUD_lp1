@@ -21,8 +21,7 @@ class ProdutoCompleto{
         void setQtestoqueProduto(int qtd_estoque);
         void setMarcaProduto(int marca);
         void setPesoProduto(float preco);
-        void setAno_lancamentoProduto(string ano_lancamento);
-        void setFabricanteProduto(string fabricante);
+        void setAno_lancamentoProduto(int ano_lancamento);
         void setPotenciaProduto(float potencia);
 };
 

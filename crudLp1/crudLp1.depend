@@ -53,17 +53,17 @@
 	<bits/stdc++.h>
 	"ItemIventario.h"
 
-1724689872 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\descricao.h
+1724866839 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\descricao.h
 	<bits/stdc++.h>
 	"ItemIventario.h"
 	"ProdutoEletronico.h"
 
-1724693476 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\descricao.cpp
+1724866831 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\descricao.cpp
 	"Descricao.h"
 	<string>
 	"ProdutoEletronico.h"
 
-1724862733 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+1724866878 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
 	"Produto.h"
 	<iostream>
 	<string>
@@ -79,10 +79,10 @@
 	"Descricao.h"
 	"ProdutoCompleto.h"
 
-1724864935 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
+1724866774 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
 	"ProdutoCompleto.h"
 
-1724865816 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
+1724866776 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
 	"ProdutoEletronico.h"
 	"Descricao.h"
 	<string>

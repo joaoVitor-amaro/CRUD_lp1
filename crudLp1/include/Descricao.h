@@ -8,17 +8,15 @@ using namespace std;
 class Descricao : public ItemIventario{
     public:
         Descricao();
-        Descricao(float peso, string data_de_lancamento, string fabricante, float potencia);
+        Descricao(float peso, int data_de_lancamento, float potencia);
 
         float getpeso();
-        string getdatadelancamento();
-        string getfabricante();
+        int getdatadelancamento();
         float getpotencia();
 
         void setpotencia(float potencia);
         void setpeso(float peso);
-        void setdatadelancamento(string data_de_lancamento);
-        void setfabricante(string fabricante);
+        void setdatadelancamento(int data_de_lancamento);
 
         void exibirDados();
 
@@ -26,7 +24,7 @@ class Descricao : public ItemIventario{
     protected:
         float potencia;
         float peso;
-        string data_de_lancamento;
+        int data_de_lancamento;
         string fabricante;
 };
 
