@@ -46,6 +46,85 @@ void Produto::pesquisarProduto() {
     dadosProdutospesqu(i); //Exibi os dados pesquisados do produto
 }
 
+
+void Produto::opcaoAtualizar() {
+    cout << "[1] - Nome" << endl;
+    cout << "[2] - Preco" << endl;
+    cout << "[3] - Quantidade de estoque" << endl;
+    cout << "[4] - Marca" << endl;
+    cout << "[5] - Peso" << endl;
+    cout << "[6] - Ano lancamento" << endl;
+    cout << "[7] - Fabricante" << endl;
+    cout << "[8] - Potencia" << endl;
+}
+
+void Produto::menuAtualizarProduto() {
+    menuPesquisar();
+    int id;
+    int opcao;
+    cout << "Informe o id";
+    cin >> id;
+    opcaoAtualizar();
+    cout << "Opcao: ";
+    cin >> opcao;
+    int pos = buscarIdProduto(id);
+    atualizarProduto(opcao, pos);
+}
+
+void Produto::atualizarProduto(int opcao, int pos) {
+    ProdutoEletronico prodEle;
+    switch (opcao) {
+        case 1:
+            prodEle.menuProduto();
+            int nome;
+            cout << "Nome: ";
+            cin >> nome;
+            this->inventario[pos].setNomeProduto(nome);
+            break;
+        case 2:
+            float preco;
+            cout << "Preco: ";
+            cin >> preco;
+            this->inventario[pos].setPrecoProduto(preco);
+            break;
+        case 3:
+            int qtd_estoque;
+            cout << "Quantidade de Estoque: ";
+            cin >> qtd_estoque;
+            this->inventario[pos].setQtestoqueProduto(qtd_estoque);
+            break;
+        case 4:
+            int marca;
+            prodEle.menuMarca();
+            cout << "Marca: ";
+            cin >> marca;
+            this->inventario[pos].setMarcaProduto(marca);
+            break;
+        case 5:
+            float peso;
+            cout << "Peso: ";
+            cin >> peso;
+            this->inventario[pos].setPesoProduto(peso);
+            break;
+        case 6:
+            {string ano_lancamento;
+            getline(cin, ano_lancamento);
+            this->inventario[pos].setAno_lancamentoProduto(ano_lancamento);
+            break;}
+        case 7:
+            {string fabricante;
+            getline(cin, fabricante);
+            this->inventario[pos].setFabricanteProduto(fabricante);
+            break;}
+        case 8:
+            float potencia;
+            cout << "Potencia: ";
+            cin >> potencia;
+            this->inventario[pos].setPotenciaProduto(potencia);
+            break;
+    }
+}
+
 void Produto::deletarProduto() {
     menuPesquisar();
     int idProdDeletar;
@@ -133,7 +212,7 @@ void Produto::menu() {
             if(this->inventario.empty()) {
                 cout << "Sem Produtos" << endl;
             } else {
-                cout << "Atualizer" << endl;
+                menuAtualizarProduto();
             }
         } else if(opcao == 5) {
             if(this->inventario.empty()) {

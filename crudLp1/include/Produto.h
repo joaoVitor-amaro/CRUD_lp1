@@ -12,14 +12,15 @@ class Produto{
         Produto();
         void menu();
         void menuOpcao();
-        //void opcaoAtualizar();
+        void opcaoAtualizar();
+        void menuAtualizarProduto();
         int buscarIdProduto(int idProduto);
         void menuPesquisar();
         void dadosProdutospesqu(int i);
         void adcionarProduto();
         void listarProduto();
         void pesquisarProduto();
-        //void atualizarProduto();
+        void atualizarProduto(int opcao, int pos);
         void deletarProduto();
 };
 

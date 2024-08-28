@@ -16,6 +16,14 @@ class ProdutoCompleto{
         void exibirDados();
         int getIdProduto();
         void getIdNome();
+        void setNomeProduto(int nome);
+        void setPrecoProduto(float preco);
+        void setQtestoqueProduto(int qtd_estoque);
+        void setMarcaProduto(int marca);
+        void setPesoProduto(float preco);
+        void setAno_lancamentoProduto(string ano_lancamento);
+        void setFabricanteProduto(string fabricante);
+        void setPotenciaProduto(float potencia);
 };
 
 #endif // PRODUTOCOMPLETO_H
