@@ -1,4 +1,6 @@
 #include "ProdutoCompleto.h"
+#include <iostream>
+#include <string>
 
 ProdutoCompleto::ProdutoCompleto(){}
 
@@ -46,4 +48,10 @@ void ProdutoCompleto::setAno_lancamentoProduto(int ano_lancamento) {
 
 void ProdutoCompleto::setPotenciaProduto(float potencia) {
     this->descricao.setpotencia(potencia);
+}
+
+string ProdutoCompleto::salvarDadosArquivos() {
+    //converter todos os atributos em string
+    string dados = to_string(this->prodr.getId()) + this->prodr.getNome();
+    return dados;
 }

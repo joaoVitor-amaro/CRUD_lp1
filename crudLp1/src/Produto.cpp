@@ -6,6 +6,9 @@
 #include "ProdutoCompleto.h"
 #include "ItemIventario.h"
 #include <vector>
+#include <cstdlib>
+#include <unistd.h>
+#include <fstream>
 
 using namespace std;
 
@@ -21,6 +24,13 @@ void Produto::menuOpcao() {
     cout << "[6] - Exibir Relatório" << endl;
     cout << "[7] - Sair" << endl;
     cout << "-----------------------------" << endl;
+}
+
+void Produto::adcionarProduto(int id, int nome, float preco, int qt_estoque, int marca, float peso, int data_lacamento, float potencia){
+    ProdutoEletronico prod = ProdutoEletronico(id, nome, preco, qt_estoque, marca);
+    Descricao desc = Descricao(peso, data_lacamento, potencia);
+    ProdutoCompleto prodCom = ProdutoCompleto(prod, desc);
+    this->inventario.push_back(prodCom);
 }
 
 void Produto::listarProduto() {
@@ -165,6 +175,7 @@ void Produto::menu() {
             return;
 
         } else if(opcao == 1) {
+            system("cls");
             int id, nome, qt_estoque, marca;
             float preco, potencia, peso;
             int data_lacamento;
@@ -190,34 +201,39 @@ void Produto::menu() {
             cin.ignore();
             cout << "Digite a potencia: ";
             cin >> potencia;
-            ProdutoEletronico prod = ProdutoEletronico(id, nome, preco, qt_estoque, marca);
-            Descricao desc = Descricao(peso, data_lacamento, potencia);
-            ProdutoCompleto prodCom = ProdutoCompleto(prod, desc);
-            inventario.push_back(prodCom);
+            adcionarProduto(id, nome, preco, qt_estoque, marca, peso, data_lacamento, potencia);
+            system("cls");
         } else if(opcao == 2) {
             listarProduto();
+            sleep(3);
+            system("cls");
         } else if(opcao == 3) {
             if(this->inventario.empty()) {
                 cout << "Nenhum produto cadastrado" << endl;
             } else {
                 pesquisarProduto();
+                sleep(3);
             }
+            system("cls");
         } else if(opcao == 4) {
             if(this->inventario.empty()) {
                 cout << "Sem Produtos" << endl;
             } else {
                 menuAtualizarProduto();
             }
+            system("cls");
         } else if(opcao == 5) {
             if(this->inventario.empty()) {
                 cout << "Sem produtos" << endl;
             } else {
                 deletarProduto();
             }
+            system("cls");
         } else if(opcao == 6) {
             cout << "Exibir relatório" << endl;
         } else {
             cout << "Opcao invalida. Tente novamente." << endl;
         }
+        system("cls");
     }
 }

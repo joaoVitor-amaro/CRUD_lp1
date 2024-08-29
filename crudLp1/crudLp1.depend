@@ -10,7 +10,7 @@
 	<string>
 	<iostream>
 
-1724693981 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
+1724869270 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
 	<string>
 
 1724692411 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
@@ -63,7 +63,7 @@
 	<string>
 	"ProdutoEletronico.h"
 
-1724866878 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+1724892383 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
 	"Produto.h"
 	<iostream>
 	<string>
@@ -72,17 +72,22 @@
 	"ProdutoCompleto.h"
 	"ItemIventario.h"
 	<vector>
+	<cstdlib>
+	<unistd.h>
+	<fstream>
 
-1724861007 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
+1724892490 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
 	<vector>
 	"ItemIventario.h"
 	"Descricao.h"
 	"ProdutoCompleto.h"
 
-1724866774 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
+1724890304 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
 	"ProdutoCompleto.h"
+	<iostream>
+	<string>
 
-1724866776 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
+1724868602 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
 	"ProdutoEletronico.h"
 	"Descricao.h"
 	<string>

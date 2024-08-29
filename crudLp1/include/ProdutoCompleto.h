@@ -23,6 +23,7 @@ class ProdutoCompleto{
         void setPesoProduto(float preco);
         void setAno_lancamentoProduto(int ano_lancamento);
         void setPotenciaProduto(float potencia);
+        string salvarDadosArquivos();
 };
 
 #endif // PRODUTOCOMPLETO_H
