@@ -1,6 +1,7 @@
 #include "ProdutoEletronico.h"
 #include <iostream>
 #include "ItemIventario.h"
+#include <iomanip>
 
 ProdutoEletronico::ProdutoEletronico(){}
 
@@ -50,5 +51,5 @@ void ProdutoEletronico::menuMarca() {
 
 void ProdutoEletronico::exibirDados() {
     ItemIventario::exibirDados();
-    cout << this->marca << " - ";
+    cout << left << setw(10) << this->marca;
 }

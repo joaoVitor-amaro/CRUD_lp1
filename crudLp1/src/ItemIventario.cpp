@@ -1,6 +1,8 @@
 #include "ItemIventario.h"
 #include <string>
 #include <iostream>
+#include <iomanip>
+
 using namespace std ;
 ItemIventario::ItemIventario(){}
 
@@ -64,8 +66,8 @@ void ItemIventario::menuProduto() {
 
 
  void ItemIventario::exibirDados() {
-    cout << this->id << " - ";
-    cout << this->nome << " - ";
-    cout << "R$" <<this->preco << " - ";
-    cout << this->qtd_estoque << " - ";
+    cout << left << setw(5) << this->id;
+    cout << left << setw(13) << this->nome;
+    cout << "R$" << left << setw(6) <<this->preco;
+    cout << left << setw(10) << this->qtd_estoque;
  }

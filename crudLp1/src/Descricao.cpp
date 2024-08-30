@@ -1,6 +1,7 @@
 #include "Descricao.h"
 #include <string>
 #include "ProdutoEletronico.h"
+#include <iomanip>
 
 using namespace std ;
 
@@ -10,7 +11,6 @@ Descricao::Descricao(float peso, int data_de_lancamento, float potencia){
     this->potencia = potencia;
     this->peso=peso;
     this->data_de_lancamento=data_de_lancamento;
-    this->fabricante=fabricante;
 }
 
 //get
@@ -36,7 +36,7 @@ void Descricao::setpotencia(float potencia){
 }
 
 void Descricao::exibirDados() {
-    cout << this->peso << " - ";
-    cout << this->data_de_lancamento << " - ";
+    cout << this->peso << left << setw(9) << "g";
+    cout << left << setw(15) << this->data_de_lancamento;
     cout << this->potencia << "w";
 }

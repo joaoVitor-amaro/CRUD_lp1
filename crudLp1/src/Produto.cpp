@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -37,13 +38,16 @@ void Produto::listarProduto() {
     if(this->inventario.empty()) {
         cout << "Nenhum produto cadastrado" << endl;
     } else {
-        cout << "ID - NOME - PRECO - ESTOQUE - MARCA - LANCAMENTO - FABRICANTE - POTENCIA" << endl;
-        cout << "---------------------------------------------------------------------" << endl;
+        cout << left << setw(5) << "ID" << left << setw(13) << "Nome"
+        << left << setw(8) << "Preco" << left << setw(10) << "Estoque"
+        << left << setw(10) << "Marca" << left << setw(10) << "Peso"
+        << left << setw(15) << "Lancamento" << left << "Potencia" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
         for(int i = 0; i < this->inventario.size(); i++) {
             this->inventario[i].exibirDados();
             cout << endl;
         }
-        cout << "---------------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
     }
 }
 
@@ -133,7 +137,7 @@ void Produto::atualizarProduto(int opcao, int pos) {
 void Produto::deletarProduto() {
     menuPesquisar();
     int idProdDeletar;
-    cout << "Deletar id: ";
+    cout << "Deletar Produto. id: ";
     cin >> idProdDeletar;
     int i = buscarIdProduto(idProdDeletar);
     this->inventario.erase(this->inventario.begin() + i);
@@ -141,12 +145,13 @@ void Produto::deletarProduto() {
 
 int Produto::buscarIdProduto(int idProduto) {
     int identificador = 0;
+    bool estado = false;
     for(int i = 0; i < this->inventario.size(); i++) {
         if(this->inventario[i].getIdProduto() == idProduto) {
             identificador = i;
+            estado = true;
         }
     }
-    return identificador;
 }
 
 void Produto::menuPesquisar() {
@@ -164,14 +169,85 @@ void Produto::dadosProdutospesqu(int i) {
     cout << "---------------------------------------------------------------------" << endl;
 }
 
+void Produto::adicionarDadosArquivos() {
+    ofstream arquivo("dados.txt");
+    if(arquivo.is_open()) {
+        if(this->inventario.empty()) {
+            return;
+        } else {
+            for(int i = 0; i < this->inventario.size(); i++) {
+                arquivo << this->inventario[i].salvarDadosArquivos() << endl;
+            }
+            arquivo.close();
+        }
+    } else {
+        cout << "Erro ao abrir o arquivo" << endl;
+    }
+}
+
+int Produto::tipoNomeProduto(string nomeStr) {
+    if (nomeStr == "Smartphone") {
+        return 1;
+    } else if (nomeStr == "Notebook") {
+        return 2;
+    } else if (nomeStr == "Tablet") {
+        return 3;
+    } else if (nomeStr == "Fone") {
+        return 4;
+    } else {
+        return 0;
+    }
+}
+
+int Produto::tipoMarcaProduto(string marcaStr) {
+    if (marcaStr == "Samsung") {
+        return 1;
+    } else if (marcaStr == "Apple") {
+        return 2;
+    } else if (marcaStr == "Motorola") {
+        return 3;
+    } else if (marcaStr == "Nokia") {
+        return 4;
+    } else if (marcaStr == "Xiaomi") {
+        return 5;
+    } else {
+        return 0;
+    }
+}
+
+void Produto::lerArquivo() {
+    ifstream arquivo("dados.txt");
+    if(!arquivo.is_open()) {
+        cout << "Erro ao ler o arquivo" << endl;
+        return ;
+    }
+    string linha;
+    while(getline(arquivo, linha)) {
+        istringstream iss(linha);
+        string idStr, nomeStr, precoStr, qt_estoqueStr, marcaStr, pesoStr, ano_lancaStr, potenciaStr;
+        iss >> idStr >> nomeStr >> precoStr >> qt_estoqueStr >> marcaStr >> pesoStr >> ano_lancaStr >> potenciaStr;
+        int id = stoi(idStr);
+        int nome = tipoNomeProduto(nomeStr);
+        float preco = stof(precoStr);
+        int qt_estoque = stoi(qt_estoqueStr);
+        int marca = tipoMarcaProduto(marcaStr);
+        float peso = stof(pesoStr);
+        int ano_lancamento = stoi(ano_lancaStr);
+        float potencia = stof(potenciaStr);
+        adcionarProduto(id, nome, preco, qt_estoque, marca, peso, ano_lancamento, potencia);
+    }
+}
+
 void Produto::menu() {
     int opcao;
+    lerArquivo();
     while(true) {
         menuOpcao();
         cout << "Opcao: ";
         cin >> opcao;
 
         if(opcao == 7) {
+            adicionarDadosArquivos();
             return;
 
         } else if(opcao == 1) {
@@ -205,7 +281,7 @@ void Produto::menu() {
             system("cls");
         } else if(opcao == 2) {
             listarProduto();
-            sleep(3);
+            sleep(5);
             system("cls");
         } else if(opcao == 3) {
             if(this->inventario.empty()) {

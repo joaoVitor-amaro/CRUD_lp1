@@ -5,18 +5,20 @@
 	"Descricao.h"
 	"Produto.h"
 
-1724694026 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\itemiventario.cpp
+1724978338 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\itemiventario.cpp
 	"ItemIventario.h"
 	<string>
 	<iostream>
+	<iomanip>
 
 1724869270 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\itemiventario.h
 	<string>
 
-1724692411 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
+1724978777 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtoeletronico.cpp
 	"ProdutoEletronico.h"
 	<iostream>
 	"ItemIventario.h"
+	<iomanip>
 
 1724689630 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtoeletronico.h
 	<string>
@@ -53,17 +55,18 @@
 	<bits/stdc++.h>
 	"ItemIventario.h"
 
-1724866839 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\descricao.h
+1724963810 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\descricao.h
 	<bits/stdc++.h>
 	"ItemIventario.h"
 	"ProdutoEletronico.h"
 
-1724866831 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\descricao.cpp
+1724979296 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\descricao.cpp
 	"Descricao.h"
 	<string>
 	"ProdutoEletronico.h"
+	<iomanip>
 
-1724892383 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+1724979468 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
 	"Produto.h"
 	<iostream>
 	<string>
@@ -75,14 +78,15 @@
 	<cstdlib>
 	<unistd.h>
 	<fstream>
+	<iomanip>
 
-1724892490 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
+1724971808 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
 	<vector>
 	"ItemIventario.h"
 	"Descricao.h"
 	"ProdutoCompleto.h"
 
-1724890304 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
+1724958315 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
 	"ProdutoCompleto.h"
 	<iostream>
 	<string>

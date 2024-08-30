@@ -25,7 +25,6 @@ class Descricao : public ItemIventario{
         float potencia;
         float peso;
         int data_de_lancamento;
-        string fabricante;
 };
 
 #endif // DESCRICAO_H

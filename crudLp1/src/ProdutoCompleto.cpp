@@ -52,6 +52,9 @@ void ProdutoCompleto::setPotenciaProduto(float potencia) {
 
 string ProdutoCompleto::salvarDadosArquivos() {
     //converter todos os atributos em string
-    string dados = to_string(this->prodr.getId()) + this->prodr.getNome();
+    string dados = to_string(this->prodr.getId()) + " " + this->prodr.getNome()
+    + " " + to_string(this->prodr.getPreco()) + " " + to_string(this->prodr.getQtdEstoque())
+    + " " + this->prodr.getMarca() + " " + to_string(this->descricao.getpeso()) + " " +
+    to_string(this->descricao.getdatadelancamento()) + " " + to_string(this->descricao.getpotencia());
     return dados;
 }
