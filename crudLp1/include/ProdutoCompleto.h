@@ -15,6 +15,13 @@ class ProdutoCompleto{
         ProdutoCompleto(ProdutoEletronico prodr, Descricao descricao);
         void exibirDados();
         int getIdProduto();
+        string getNomeProduto();
+        float getPrecoProduto();
+        int getQtEstoqueProduto();
+        string getMarcaProduto();
+        float getPesoProduto();
+        int getAnoLancamentoProduto();
+        float getPotenciaProduto();
         void getIdNome();
         void setNomeProduto(int nome);
         void setPrecoProduto(float preco);
