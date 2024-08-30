@@ -18,9 +18,38 @@ int ProdutoCompleto::getIdProduto() {
     return this->prodr.getId();
 }
 
+string ProdutoCompleto::getNomeProduto() {
+    return this->prodr.getNome();
+}
+
+float ProdutoCompleto::getPrecoProduto() {
+    return this->prodr.getPreco();
+}
+
+int ProdutoCompleto::getQtEstoqueProduto() {
+    return this->prodr.getQtdEstoque();
+}
+
+string ProdutoCompleto::getMarcaProduto() {
+    return this->prodr.getMarca();
+}
+
+float ProdutoCompleto::getPesoProduto() {
+    return this->descricao.getpeso();
+}
+
+int ProdutoCompleto::getAnoLancamentoProduto() {
+    return this->descricao.getdatadelancamento();
+}
+
+float ProdutoCompleto::getPotenciaProduto() {
+    return this->descricao.getpotencia();
+}
+
 void ProdutoCompleto::getIdNome() {
     cout << this->prodr.getId() << " - " << this->prodr.getNome() << endl;
 }
+
 
 void ProdutoCompleto::setNomeProduto(int nome) {
     this->prodr.setNome(nome);
