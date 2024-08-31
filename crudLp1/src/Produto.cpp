@@ -193,10 +193,14 @@ void Produto::menuPesquisar() {
 }
 
 void Produto::dadosProdutospesqu(int i) {
-    cout << "---------------------------------------------------------------------" << endl;
+    cout << left << setw(5) << "ID" << left << setw(13) << "Nome"
+        << left << setw(8) << "Preco" << left << setw(10) << "Estoque"
+        << left << setw(10) << "Marca" << left << setw(10) << "Peso"
+        << left << setw(15) << "Lancamento" << left << "Potencia" << endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
     this->inventario[i].exibirDados();
     cout << endl;
-    cout << "---------------------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
 }
 
 void Produto::adicionarDadosArquivos() {
@@ -268,6 +272,116 @@ void Produto::lerArquivo() {
     }
 }
 
+int Produto::qtdEstoqueTotal() {
+    int totalEstoque = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        totalEstoque += this->inventario[i].getQtEstoqueProduto();
+    }
+    return totalEstoque;
+}
+
+int Produto::qtdSmartphoneTotal() {
+    int totalPhone = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getNomeProduto() == "Smartphone") {
+            totalPhone++;
+        }
+    }
+    return totalPhone;
+}
+
+int Produto::qtdNoteTotal() {
+    int totalNote = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getNomeProduto() == "Notebook") {
+            totalNote++;
+        }
+    }
+    return totalNote;
+}
+
+int Produto::qtdTabletTotal() {
+    int totalTablet = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getNomeProduto() == "Tablet") {
+            totalTablet++;
+        }
+    }
+    return totalTablet;
+}
+
+int Produto::qtdFoneTotal() {
+    int totalFone = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getNomeProduto() == "Fone") {
+            totalFone++;
+        }
+    }
+    return totalFone;
+}
+
+int Produto::qtdSamsungTotal() {
+    int totalSamsung = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getMarcaProduto() == "Samsung") {
+            totalSamsung++;
+        }
+    }
+    return totalSamsung;
+}
+
+int Produto::qtdAppleTotal() {
+    int totalApple = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getMarcaProduto() == "Apple") {
+            totalApple++;
+        }
+    }
+    return totalApple;
+}
+
+int Produto::qtdMotorolaTotal() {
+    int totalMoto = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getMarcaProduto() == "Motorola") {
+            totalMoto++;
+        }
+    }
+    return totalMoto;
+}
+
+int Produto::qtdNokiaTotal() {
+    int totalNokia = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getMarcaProduto() == "Nokia") {
+            totalNokia++;
+        }
+    }
+    return totalNokia;
+}
+
+int Produto::qtdXiaomiTotal() {
+    int totalXiaomi = 0;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        if(this->inventario[i].getMarcaProduto() == "Xiaomi") {
+            totalXiaomi++;
+        }
+    }
+    return totalXiaomi;
+}
+
+void Produto::exibirRelatorio() {
+    cout << "Quantidade total de Produto: " << qtdEstoqueTotal() << endl;
+    cout << "Quantidade de Smartphone: " << qtdSmartphoneTotal() << endl;
+    cout << "Quantidade de Notebook: " << qtdNoteTotal() << endl;
+    cout << "Quantidade de Tablet: " << qtdTabletTotal() << endl;
+    cout << "Quantidade de Fone: " << qtdFoneTotal() << endl;
+    cout << "Quantidade de Samsung: " << qtdSamsungTotal() << endl;
+    cout << "Quantidade de Apple: " << qtdAppleTotal() << endl;
+    cout << "Quantidade de Motorola: " << qtdMotorolaTotal() << endl;
+    cout << "Quantidade de Nokia: " << qtdNokiaTotal() << endl;
+    cout << "Quantidade de Xiaomi: " << qtdXiaomiTotal() << endl;
+}
 
 
 void Produto::menu() {
@@ -290,6 +404,7 @@ void Produto::menu() {
             ProdutoEletronico prodr;
             cout << "ID: ";
             cin >> id;
+
             ive.menuProduto();
             cout << "Nome: ";
             cin >> nome;
@@ -335,7 +450,10 @@ void Produto::menu() {
                 deletarProduto();
             }
         } else if(opcao == 6) {
-            cout << "Exibir relatório" << endl;
+            cout << "Relatorio" << endl;
+            cout << "-=-=-=-=-" << endl;
+            exibirRelatorio();
+            sleep(5);
         } else {
             cout << "Opcao invalida. Tente novamente." << endl;
             sleep(0.5);

@@ -19,6 +19,7 @@ class Produto{
         int tipoMarcaProduto(string marcaStr);
         void menuPesquisar();
         void dadosProdutospesqu(int i);
+
         void adcionarProduto(int id, int nome, float preco, int qt_estoque, int marca, float peso, int data_lacamento, float potencia);
         void listarProduto();
         void pesquisarProduto();
@@ -26,6 +27,17 @@ class Produto{
         void deletarProduto();
         void adicionarDadosArquivos();
         void lerArquivo();
+        int qtdEstoqueTotal();
+        int qtdSmartphoneTotal();
+        int qtdNoteTotal();
+        int qtdTabletTotal();
+        int qtdFoneTotal();
+        int qtdSamsungTotal();
+        int qtdAppleTotal();
+        int qtdMotorolaTotal();
+        int qtdNokiaTotal();
+        int qtdXiaomiTotal();
+        void exibirRelatorio();
 };
 
 #endif // PRODUTO_H
