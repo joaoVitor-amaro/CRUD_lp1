@@ -66,7 +66,7 @@
 	"ProdutoEletronico.h"
 	<iomanip>
 
-1724979468 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+1725061935 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
 	"Produto.h"
 	<iostream>
 	<string>
@@ -86,12 +86,12 @@
 	"Descricao.h"
 	"ProdutoCompleto.h"
 
-1724958315 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
+1725061836 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
 	"ProdutoCompleto.h"
 	<iostream>
 	<string>
 
-1724868602 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
+1725061677 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
 	"ProdutoEletronico.h"
 	"Descricao.h"
 	<string>
