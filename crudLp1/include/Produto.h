@@ -19,7 +19,7 @@ class Produto{
         int tipoMarcaProduto(string marcaStr);
         void menuPesquisar();
         void dadosProdutospesqu(int i);
-
+        int verificarIdExistente(int id);
         void adcionarProduto(int id, int nome, float preco, int qt_estoque, int marca, float peso, int data_lacamento, float potencia);
         void listarProduto();
         void pesquisarProduto();

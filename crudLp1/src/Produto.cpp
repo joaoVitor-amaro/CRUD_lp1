@@ -383,6 +383,21 @@ void Produto::exibirRelatorio() {
     cout << "Quantidade de Xiaomi: " << qtdXiaomiTotal() << endl;
 }
 
+int Produto::verificarIdExistente(int id) {
+    while(true) {
+        int buscarId = buscarIdProduto(id);
+        if(buscarId >= 0) {
+            cout << "Id existente. Digite outro" << endl;
+            sleep(1);
+            system("cls");
+            cout << "Id: ";
+            cin >> id;
+        } else {
+            return id;
+            break;
+        }
+    }
+}
 
 void Produto::menu() {
     int opcao;
@@ -404,7 +419,7 @@ void Produto::menu() {
             ProdutoEletronico prodr;
             cout << "ID: ";
             cin >> id;
-
+            id = verificarIdExistente(id);
             ive.menuProduto();
             cout << "Nome: ";
             cin >> nome;
