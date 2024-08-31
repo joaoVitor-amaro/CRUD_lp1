@@ -56,8 +56,13 @@ void Produto::pesquisarProduto() {
     int idProduto;
     cout << "Id: ";
     cin >> idProduto;
-    int i = buscarIdProduto(idProduto); //Busca o id do produto
-    dadosProdutospesqu(i); //Exibi os dados pesquisados do produto
+    int i = buscarIdProduto(idProduto);//Busca o id do produto
+    if(i >= 0) {
+        dadosProdutospesqu(i); //Exibi os dados pesquisados do produto
+    } else {
+        cout << "Produto nao encontrado" << endl;
+        sleep(0.8);
+    }
 }
 
 
@@ -75,38 +80,49 @@ void Produto::menuAtualizarProduto() {
     menuPesquisar();
     int id;
     int opcao;
-    cout << "Informe o id";
+    cout << "Informe o id para atualizar: ";
     cin >> id;
+    system("cls");
     opcaoAtualizar();
-    cout << "Opcao: ";
+    cout << "Digite a opcao para atualizar: ";
     cin >> opcao;
+    system("cls");
     int pos = buscarIdProduto(id);
-    atualizarProduto(opcao, pos);
+    if(pos >= 0) {
+        atualizarProduto(opcao, pos);
+    } else {
+        cout << "Produto nao encontrado" << endl;
+    }
 }
 
 void Produto::atualizarProduto(int opcao, int pos) {
     ProdutoEletronico prodEle;
     switch (opcao) {
         case 1:
+            cout << "Nome do produto atual: " << this->inventario[pos].getNomeProduto() << endl;
+            sleep(2);
             prodEle.menuProduto();
             int nome;
-            cout << "Nome: ";
+            cout << "Desejar atualizar para qual produto: ";
             cin >> nome;
             this->inventario[pos].setNomeProduto(nome);
             break;
         case 2:
+            cout << "Preco do produto atual: R$" << this->inventario[pos].getPrecoProduto() << endl;
             float preco;
             cout << "Preco: ";
             cin >> preco;
             this->inventario[pos].setPrecoProduto(preco);
             break;
         case 3:
+            cout << "Quantidade no estoque atual: " << this->inventario[pos].getQtEstoqueProduto() << endl;
             int qtd_estoque;
             cout << "Quantidade de Estoque: ";
             cin >> qtd_estoque;
             this->inventario[pos].setQtestoqueProduto(qtd_estoque);
             break;
         case 4:
+            cout << "Marca atual do Produto: " << this->inventario[pos].getMarcaProduto() << endl;
             int marca;
             prodEle.menuMarca();
             cout << "Marca: ";
@@ -114,18 +130,21 @@ void Produto::atualizarProduto(int opcao, int pos) {
             this->inventario[pos].setMarcaProduto(marca);
             break;
         case 5:
+            cout << "Peso atual do produto: " << this->inventario[pos].getPesoProduto() << "g" << endl;
             float peso;
             cout << "Peso: ";
             cin >> peso;
             this->inventario[pos].setPesoProduto(peso);
             break;
         case 6:
+            cout << "Ano lancamento atual: " << this->inventario[pos].getAnoLancamentoProduto() << endl;
             int ano_lancamento;
             cout << "Ano de lacamento: ";
             cin >> ano_lancamento;
             this->inventario[pos].setAno_lancamentoProduto(ano_lancamento);
             break;
         case 7:
+            cout << "Potencia atual do Produto: " << this->inventario[pos].getPotenciaProduto() << "w" <<endl;
             float potencia;
             cout << "Potencia: ";
             cin >> potencia;
@@ -140,7 +159,13 @@ void Produto::deletarProduto() {
     cout << "Deletar Produto. id: ";
     cin >> idProdDeletar;
     int i = buscarIdProduto(idProdDeletar);
-    this->inventario.erase(this->inventario.begin() + i);
+    if(i >= 0) {
+        this->inventario.erase(this->inventario.begin() + i);
+    } else {
+        cout << "Produto não encontrado" << endl;
+        sleep(2);
+    }
+
 }
 
 int Produto::buscarIdProduto(int idProduto) {
@@ -151,6 +176,11 @@ int Produto::buscarIdProduto(int idProduto) {
             identificador = i;
             estado = true;
         }
+    }
+    if(estado) {
+        return identificador;
+    } else {
+        return -1;
     }
 }
 
@@ -238,6 +268,8 @@ void Produto::lerArquivo() {
     }
 }
 
+
+
 void Produto::menu() {
     int opcao;
     lerArquivo();
@@ -245,13 +277,12 @@ void Produto::menu() {
         menuOpcao();
         cout << "Opcao: ";
         cin >> opcao;
-
+        system("cls");
         if(opcao == 7) {
             adicionarDadosArquivos();
             return;
 
         } else if(opcao == 1) {
-            system("cls");
             int id, nome, qt_estoque, marca;
             float preco, potencia, peso;
             int data_lacamento;
@@ -278,38 +309,38 @@ void Produto::menu() {
             cout << "Digite a potencia: ";
             cin >> potencia;
             adcionarProduto(id, nome, preco, qt_estoque, marca, peso, data_lacamento, potencia);
-            system("cls");
         } else if(opcao == 2) {
             listarProduto();
             sleep(5);
-            system("cls");
         } else if(opcao == 3) {
             if(this->inventario.empty()) {
                 cout << "Nenhum produto cadastrado" << endl;
+                sleep(2);
             } else {
                 pesquisarProduto();
                 sleep(3);
             }
-            system("cls");
         } else if(opcao == 4) {
             if(this->inventario.empty()) {
                 cout << "Sem Produtos" << endl;
+                sleep(2);
             } else {
                 menuAtualizarProduto();
             }
-            system("cls");
         } else if(opcao == 5) {
             if(this->inventario.empty()) {
                 cout << "Sem produtos" << endl;
+                sleep(2);
             } else {
                 deletarProduto();
             }
-            system("cls");
         } else if(opcao == 6) {
             cout << "Exibir relatório" << endl;
         } else {
             cout << "Opcao invalida. Tente novamente." << endl;
+            sleep(0.5);
         }
         system("cls");
+
     }
 }
