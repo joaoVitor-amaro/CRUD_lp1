@@ -83,6 +83,8 @@ void Produto::menuAtualizarProduto() {
     cout << "Informe o id para atualizar: ";
     cin >> id;
     system("cls");
+    cout << "Atualizar Produto" << endl;
+    cout << "-=-=-=-=-=-=-=-=-" << endl;
     opcaoAtualizar();
     cout << "Digite a opcao para atualizar: ";
     cin >> opcao;
@@ -97,6 +99,8 @@ void Produto::menuAtualizarProduto() {
 
 void Produto::atualizarProduto(int opcao, int pos) {
     ProdutoEletronico prodEle;
+    cout << "Atualizar Produto" << endl;
+    cout << "-=-=-=-=-=-=-=-=-" << endl;
     switch (opcao) {
         case 1:
             cout << "Nome do produto atual: " << this->inventario[pos].getNomeProduto() << endl;
@@ -475,6 +479,8 @@ void Produto::menu() {
             cin >> potencia;
             adcionarProduto(id, nome, preco, qt_estoque, marca, peso, data_lacamento, potencia);
         } else if(opcao == 2) {
+            cout << "Lista de Produtos" << endl;
+            cout << "-=-=-=-=-=-=-=-=-" << endl;
             listarProduto();
             sleep(5);
         } else if(opcao == 3) {
