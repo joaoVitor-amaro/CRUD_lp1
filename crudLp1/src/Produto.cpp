@@ -399,6 +399,39 @@ int Produto::verificarIdExistente(int id) {
     }
 }
 
+int Produto::selecionarTipoProduto(int nome) {
+    ProdutoEletronico prodr;
+    while(true) {
+        if(nome >= 1 && nome <= 4) {
+            return nome;
+            break;
+        } else {
+            cout << "Opcao invalida" << endl;
+            sleep(1);
+            system("cls");
+            prodr.menuProduto();
+            cout << "Nome: ";
+            cin >> nome;
+        }
+    }
+}
+
+int Produto::selecionarTipoMarca(int marca) {
+    ProdutoEletronico prodr;
+    while(true) {
+        if(marca >= 1 && marca <= 5) {
+            return marca;
+        } else {
+            cout << "Opcao invalida" << endl;
+            sleep(1);
+            system("cls");
+            prodr.menuMarca();
+            cout << "Marca: ";
+            cin >> marca;
+        }
+    }
+}
+
 void Produto::menu() {
     int opcao;
     lerArquivo();
@@ -423,6 +456,7 @@ void Produto::menu() {
             ive.menuProduto();
             cout << "Nome: ";
             cin >> nome;
+            nome = selecionarTipoProduto(nome);
             cout << "Preco: ";
             cin >> preco;
             cout << "Quantidade em Estoque: ";
@@ -430,6 +464,7 @@ void Produto::menu() {
             prodr.menuMarca();
             cout << "Marca: ";
             cin >> marca;
+            marca = selecionarTipoMarca(marca);
             cout << "Digite o peso: ";
             cin >> peso;
             cin.ignore();

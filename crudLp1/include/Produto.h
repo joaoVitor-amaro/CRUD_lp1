@@ -20,6 +20,8 @@ class Produto{
         void menuPesquisar();
         void dadosProdutospesqu(int i);
         int verificarIdExistente(int id);
+        int selecionarTipoProduto(int nome);
+        int selecionarTipoMarca(int marca);
         void adcionarProduto(int id, int nome, float preco, int qt_estoque, int marca, float peso, int data_lacamento, float potencia);
         void listarProduto();
         void pesquisarProduto();

@@ -66,7 +66,7 @@
 	"ProdutoEletronico.h"
 	<iomanip>
 
-1725145090 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+1725149764 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
 	"Produto.h"
 	<iostream>
 	<string>
@@ -80,7 +80,7 @@
 	<fstream>
 	<iomanip>
 
-1725145325 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
+1725198818 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
 	<vector>
 	"ItemIventario.h"
 	"Descricao.h"
