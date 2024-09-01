@@ -35,20 +35,19 @@ void Produto::adcionarProduto(int id, int nome, float preco, int qt_estoque, int
 }
 
 void Produto::listarProduto() {
-    if(this->inventario.empty()) {
-        cout << "Nenhum produto cadastrado" << endl;
-    } else {
-        cout << left << setw(5) << "ID" << left << setw(13) << "Nome"
-        << left << setw(8) << "Preco" << left << setw(10) << "Estoque"
-        << left << setw(10) << "Marca" << left << setw(10) << "Peso"
-        << left << setw(15) << "Lancamento" << left << "Potencia" << endl;
-        cout << "-------------------------------------------------------------------------------" << endl;
-        for(int i = 0; i < this->inventario.size(); i++) {
-            this->inventario[i].exibirDados();
-            cout << endl;
-        }
-        cout << "-------------------------------------------------------------------------------" << endl;
+    cout << "Lista de Produtos" << endl;
+    cout << "-=-=-=-=-=-=-=-=-" << endl;
+    cout << left << setw(5) << "ID" << left << setw(13) << "Nome"
+    << left << setw(8) << "Preco" << left << setw(10) << "Estoque"
+    << left << setw(10) << "Marca" << left << setw(10) << "Peso"
+    << left << setw(15) << "Lancamento" << left << "Potencia" << endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
+    for(int i = 0; i < this->inventario.size(); i++) {
+        this->inventario[i].exibirDados();
+        cout << endl;
     }
+    cout << "-------------------------------------------------------------------------------" << endl;
+
 }
 
 void Produto::pesquisarProduto() {
@@ -98,14 +97,13 @@ void Produto::menuAtualizarProduto() {
 }
 
 void Produto::atualizarProduto(int opcao, int pos) {
-    ProdutoEletronico prodEle;
     cout << "Atualizar Produto" << endl;
     cout << "-=-=-=-=-=-=-=-=-" << endl;
     switch (opcao) {
         case 1:
             cout << "Nome do produto atual: " << this->inventario[pos].getNomeProduto() << endl;
             sleep(2);
-            prodEle.menuProduto();
+            menuProduto();
             int nome;
             cout << "Desejar atualizar para qual produto: ";
             cin >> nome;
@@ -128,7 +126,7 @@ void Produto::atualizarProduto(int opcao, int pos) {
         case 4:
             cout << "Marca atual do Produto: " << this->inventario[pos].getMarcaProduto() << endl;
             int marca;
-            prodEle.menuMarca();
+            menuMarca();
             cout << "Marca: ";
             cin >> marca;
             this->inventario[pos].setMarcaProduto(marca);
@@ -403,8 +401,17 @@ int Produto::verificarIdExistente(int id) {
     }
 }
 
+void Produto::menuProduto() {
+    cout << "------------------" << endl;
+    cout << "     Produto" << endl;
+    cout << "------------------" << endl;
+    cout << "[1] - Smartphone" << endl;
+    cout << "[2] - Notebook" << endl;
+    cout << "[3] - Tablet" << endl;
+    cout << "[4] - Fone" << endl;
+}
+
 int Produto::selecionarTipoProduto(int nome) {
-    ProdutoEletronico prodr;
     while(true) {
         if(nome >= 1 && nome <= 4) {
             return nome;
@@ -413,15 +420,25 @@ int Produto::selecionarTipoProduto(int nome) {
             cout << "Opcao invalida" << endl;
             sleep(1);
             system("cls");
-            prodr.menuProduto();
+            menuProduto();
             cout << "Nome: ";
             cin >> nome;
         }
     }
 }
 
+void Produto::menuMarca() {
+    cout << "------------------" << endl;
+    cout << "     Marca" << endl;
+    cout << "------------------" << endl;
+    cout << "[1] - Samsung" << endl;
+    cout << "[2] - Apple" << endl;
+    cout << "[3] - Motorola" << endl;
+    cout << "[4] - Nokia" << endl;
+    cout << "[5] - Xiaomi" << endl;
+}
+
 int Produto::selecionarTipoMarca(int marca) {
-    ProdutoEletronico prodr;
     while(true) {
         if(marca >= 1 && marca <= 5) {
             return marca;
@@ -429,7 +446,7 @@ int Produto::selecionarTipoMarca(int marca) {
             cout << "Opcao invalida" << endl;
             sleep(1);
             system("cls");
-            prodr.menuMarca();
+            menuMarca();
             cout << "Marca: ";
             cin >> marca;
         }
@@ -443,21 +460,19 @@ void Produto::menu() {
         menuOpcao();
         cout << "Opcao: ";
         cin >> opcao;
-        system("cls");
         if(opcao == 7) {
             adicionarDadosArquivos();
             return;
 
         } else if(opcao == 1) {
+            system("cls");
             int id, nome, qt_estoque, marca;
             float preco, potencia, peso;
             int data_lacamento;
-            ItemIventario ive;
-            ProdutoEletronico prodr;
             cout << "ID: ";
             cin >> id;
             id = verificarIdExistente(id);
-            ive.menuProduto();
+            menuProduto();
             cout << "Nome: ";
             cin >> nome;
             nome = selecionarTipoProduto(nome);
@@ -465,7 +480,7 @@ void Produto::menu() {
             cin >> preco;
             cout << "Quantidade em Estoque: ";
             cin >> qt_estoque;
-            prodr.menuMarca();
+            menuMarca();
             cout << "Marca: ";
             cin >> marca;
             marca = selecionarTipoMarca(marca);
@@ -479,10 +494,14 @@ void Produto::menu() {
             cin >> potencia;
             adcionarProduto(id, nome, preco, qt_estoque, marca, peso, data_lacamento, potencia);
         } else if(opcao == 2) {
-            cout << "Lista de Produtos" << endl;
-            cout << "-=-=-=-=-=-=-=-=-" << endl;
-            listarProduto();
-            sleep(5);
+            if(this->inventario.empty()) {
+                cout << "Nenhum produto cadastrado" << endl;
+                sleep(2);
+            } else {
+                system("cls");
+                listarProduto();
+                sleep(5);
+            }
         } else if(opcao == 3) {
             if(this->inventario.empty()) {
                 cout << "Nenhum produto cadastrado" << endl;
@@ -493,19 +512,22 @@ void Produto::menu() {
             }
         } else if(opcao == 4) {
             if(this->inventario.empty()) {
-                cout << "Sem Produtos" << endl;
+                cout << "Nenhum produto cadastrado" << endl;
                 sleep(2);
             } else {
+                system("cls");
                 menuAtualizarProduto();
             }
         } else if(opcao == 5) {
             if(this->inventario.empty()) {
-                cout << "Sem produtos" << endl;
+                cout << "Nenhum produto cadastrado" << endl;
                 sleep(2);
             } else {
+                system("cls");
                 deletarProduto();
             }
         } else if(opcao == 6) {
+            system("cls");
             cout << "Relatorio" << endl;
             cout << "-=-=-=-=-" << endl;
             exibirRelatorio();

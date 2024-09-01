@@ -12,7 +12,6 @@ class ProdutoEletronico : public ItemIventario{
         ProdutoEletronico(int id, int nome, float preco, int qt_estoque, int marca);
         void setMarca(int marca);
         string getMarca();
-        void menuMarca();
         void exibirDados() override;
 };
 

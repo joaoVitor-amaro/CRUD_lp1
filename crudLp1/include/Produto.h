@@ -16,6 +16,8 @@ class Produto{
         void opcaoAtualizar();
         void menuAtualizarProduto();
         void menuPesquisar();
+        void menuProduto();
+        void menuMarca();
 
         int buscarIdProduto(int idProduto); //Método para buscar o id
         int tipoNomeProduto(string nomeStr); //Método que retorna o tipo do nome do produto em inteiro das possiveis opções

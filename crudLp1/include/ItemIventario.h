@@ -20,7 +20,6 @@ class ItemIventario{
         void setNome(int nome);
         void setPreco(float preco);
         void setQtdEstoque(int qtd_estoque);
-        void menuProduto();
         virtual void exibirDados();
 };
 

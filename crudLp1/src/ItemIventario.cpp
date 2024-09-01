@@ -54,17 +54,6 @@ void ItemIventario::setQtdEstoque(int qtd_estoque) {
     this->qtd_estoque = qtd_estoque;
 }
 
-void ItemIventario::menuProduto() {
-    cout << "------------------" << endl;
-    cout << "     Produto" << endl;
-    cout << "------------------" << endl;
-    cout << "[1] - Smartphone" << endl;
-    cout << "[2] - Notebook" << endl;
-    cout << "[3] - Tablet" << endl;
-    cout << "[4] - Fone" << endl;
-}
-
-
  void ItemIventario::exibirDados() {
     cout << left << setw(5) << this->id;
     cout << left << setw(13) << this->nome;

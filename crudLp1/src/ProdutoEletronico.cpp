@@ -37,18 +37,6 @@ string ProdutoEletronico::getMarca() {
     return this->marca;
 }
 
-
-void ProdutoEletronico::menuMarca() {
-    cout << "------------------" << endl;
-    cout << "     Marca" << endl;
-    cout << "------------------" << endl;
-    cout << "[1] - Samsung" << endl;
-    cout << "[2] - Apple" << endl;
-    cout << "[3] - Motorola" << endl;
-    cout << "[4] - Nokia" << endl;
-    cout << "[5] - Xiaomi" << endl;
-}
-
 void ProdutoEletronico::exibirDados() {
     ItemIventario::exibirDados();
     cout << left << setw(10) << this->marca;
