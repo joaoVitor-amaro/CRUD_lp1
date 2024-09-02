@@ -272,6 +272,7 @@ void Produto::lerArquivo() {
         float potencia = stof(potenciaStr);
         adcionarProduto(id, nome, preco, qt_estoque, marca, peso, ano_lancamento, potencia);
     }
+    arquivo.close();
 }
 
 int Produto::qtdEstoqueTotal() {
@@ -460,11 +461,8 @@ void Produto::menu() {
         menuOpcao();
         cout << "Opcao: ";
         cin >> opcao;
-        if(opcao == 7) {
-            adicionarDadosArquivos();
-            return;
 
-        } else if(opcao == 1) {
+        if(opcao == 1) {
             system("cls");
             int id, nome, qt_estoque, marca;
             float preco, potencia, peso;
@@ -532,11 +530,19 @@ void Produto::menu() {
             cout << "-=-=-=-=-" << endl;
             exibirRelatorio();
             sleep(5);
+
+        } else if(opcao == 7) {
+            adicionarDadosArquivos();
+            cout << "Saindo do programa..." << endl;
+            return;
         } else {
             cout << "Opcao invalida. Tente novamente." << endl;
             sleep(0.5);
         }
         system("cls");
-
     }
+}
+
+Produto::~Produto() {
+    this->inventario.clear();
 }

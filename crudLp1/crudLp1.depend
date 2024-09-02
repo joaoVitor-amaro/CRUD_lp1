@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1724864950 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\main.cpp
+1725236416 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\main.cpp
 	<iostream>
 	<vector>
 	"Descricao.h"
@@ -66,7 +66,7 @@
 	"ProdutoEletronico.h"
 	<iomanip>
 
-1725234649 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
+1725237773 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produto.cpp
 	"Produto.h"
 	<iostream>
 	<string>
@@ -80,18 +80,18 @@
 	<fstream>
 	<iomanip>
 
-1725233946 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
+1725236307 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produto.h
 	<vector>
 	"ItemIventario.h"
 	"Descricao.h"
 	"ProdutoCompleto.h"
 
-1725061836 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
+1725236216 source:c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\src\produtocompleto.cpp
 	"ProdutoCompleto.h"
 	<iostream>
 	<string>
 
-1725062736 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
+1725236231 c:\users\joaov\documents\projetosprogramacao\crud_lp1\crudlp1\include\produtocompleto.h
 	"ProdutoEletronico.h"
 	"Descricao.h"
 	<string>

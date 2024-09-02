@@ -10,6 +10,7 @@ class Produto{
         vector<ProdutoCompleto> inventario;
     public:
         Produto();
+        ~Produto();
         //Menus
         void menu();
         void menuOpcao();
