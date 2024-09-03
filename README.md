@@ -1,4 +1,4 @@
-# CRUD_lp1
+# CRUD_lp1 - Cadastro de Produto Eletrônico 
 Grupo:
   - João Vitor Amaro
   - Vitor Manuel
